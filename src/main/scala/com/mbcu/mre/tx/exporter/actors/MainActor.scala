@@ -79,6 +79,7 @@ class MainActor(accsPath : String, sqlitePath : String) extends Actor with MyLog
 
     case Shutdown(code) =>
       sqliteActor foreach (_ ! "terminate")
+      self ! LogRemainder
       info(s"Stopping application, code $code")
       implicit val executionContext: ExecutionContext = context.system.dispatcher
       context.system.scheduler.scheduleOnce(Duration.Zero)(System.exit(code))

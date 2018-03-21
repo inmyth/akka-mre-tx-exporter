@@ -6,17 +6,17 @@ Exports txns from rippled SQLite, converts meta and tx blobs into json, saves it
 ### Db parameters
 Sqlite and Mysql dbs are defined in `application.conf`
 
-*Sqlite*
+**Sqlite**
 
 | Field        | Description    |   
-| ------------- |:-------------:| 
-| limit         | the number of rows selected in a query | 
-| minLedger     | starting ledger      | 
-| maxLedger     | end ledger      | 
+| -------------|:-------------: |
+| limit        | the number of rows selected in a query |
+| minLedger    | starting ledger |
+| maxLedger    | end ledger |
 
 It is important that users addresses are available between minLedger and maxLedger. 
 
-*MySql*
+**MySql**
 
 The important fields are
 - db.default.url
@@ -32,20 +32,23 @@ In Idea, go to File->Project Structure->Library, add these in ./lib folder
 - ripple-core-0.0.1-SNAPSHOT.jar
 
 
-### Building and Running
+### To Use
+Open `application.conf` and define all db parameters.
+For every operation, ideally current minLedger should be the last maxLedger.
 
-To build, run this in root
+To build and package, run in root
 
 ```
 sbt assembly
 ```
-It will build a fat jar in ./target/scala-xxx/
+The jar will be created in ./target/scala-xxx/
 
-To run the app needs three arguments
+Prepare these
 1. File of all users' addresses
-2. Folder containing rippled `transaction.db` and `ledger.db`. (these files are in `/var/lib/rippled/db/`)
+2. Folder containing rippled `transaction.db` and `ledger.db`. (these files are from rippled server `/var/lib/rippled/db/`)
 3. Log folder
 
+Run with command
 ```
 java -jar xxx.jar <path to user addresses file> <path to rippled's db dir> <path to log dir>
 ```

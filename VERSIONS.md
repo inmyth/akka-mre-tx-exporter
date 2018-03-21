@@ -1,3 +1,7 @@
+0.1.1 
+- log remainder before shutdown
+- updated application-conf.template
+
 0.1
 - first working version
 - connected with sqlite to load transaction.db
@@ -5,4 +9,4 @@
 - connected with MySql db
 
 ### TODO
-[] need to 
+ 
