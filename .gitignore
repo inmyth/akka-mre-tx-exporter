@@ -93,4 +93,4 @@ project/plugins/project/
 log/
 
 *.conf
-trade_wallet_addresses.txt
+*addresses*.txt

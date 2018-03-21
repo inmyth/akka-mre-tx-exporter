@@ -1,0 +1,14 @@
+# JDBC settings
+db.default.driver="com.mysql.cj.jdbc.Driver"
+db.default.url="jdbc:mysql://35.231.81.56:3306/main?characterEncoding=UTF-8&useSSL=false"
+db.default.user="root"
+db.default.password=""
+# Connection Pool settings
+db.default.poolInitialSize=5
+db.default.poolMaxSize=7
+db.default.poolConnectionTimeoutMillis=1000
+db.default.poolValidationQuery="select 1 as one"
+db.default.poolFactoryName="commons-dbcp"
+scalikejdbc.global.loggingSQLAndTime.enabled=false
+scalikejdbc.global.loggingSQLAndTime.singleLineMode=true
+
